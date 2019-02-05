@@ -1,0 +1,42 @@
+<!-- ---
+layout: false
+---  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Jieny Resume</title>
+	<script src='./plugins/vue.min.js'></script>
+	<script src="./plugins/vue-terminal.min.js"></script>
+	<script src="./plugins/commandList.js"></script>
+	<script src="./plugins/taskList.js"></script>
+	<style>
+		.terminal div {
+			max-height: none !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<template>
+			<vue-terminal :task-list="taskList" :command-list="commandList" style="width:100%;margin:0 auto"></vue-terminal>
+		</template>
+	</div>
+</body>
+<script>
+	var main = {
+		data() {
+			return {
+				taskList,
+				commandList
+			}
+		}
+	}
+	var APP = Vue.extend(main)
+	new APP().$mount('#app')
+</script>
+
+</html>
