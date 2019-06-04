@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jieny.github.io/"/>
-  <updated>2018-08-10T13:20:43.972Z</updated>
+  <updated>2019-06-04T15:36:27.134Z</updated>
   <id>https://jieny.github.io/</id>
   
   <author>
@@ -17,19 +17,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://jieny.github.io/2018/08/10/hello-world/"/>
-    <id>https://jieny.github.io/2018/08/10/hello-world/</id>
-    <published>2018-08-10T11:34:13.005Z</published>
-    <updated>2018-08-10T13:20:43.972Z</updated>
+    <title>什么是SPA（单页Web应用）</title>
+    <link href="https://jieny.github.io/2019/06/04/SPA/"/>
+    <id>https://jieny.github.io/2019/06/04/SPA/</id>
+    <published>2019-06-04T15:29:43.000Z</published>
+    <updated>2019-06-04T15:36:27.134Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="什么是SPA"><a href="#什么是SPA" class="headerlink" title="什么是SPA"></a>什么是SPA</h1><p>SPA = single page web application = 单页Web应用<br>SPA是一种特殊的Web应用，是加载<strong>单个HTML</strong>页面并在用户与应用程序交互时动态更新该页面。<br>它将所有的活动局限于一个HTML中，仅在该页面初始化时加载相应的HTML、JavaScript、CSS。一旦页面加载完成，不会因为用户的操作而进行页面的重新加载（<strong>整页刷新</strong>）或跳转，而是利用JavaScript动态的变换HTML，从而实现UI与用户的交互。  </p><h2 id="传统Web"><a href="#传统Web" class="headerlink" title="传统Web"></a>传统Web</h2><pre class="mermaid">graph LRA[Client]-->|URL Request| B[Server]B-->|HTML Response| A</pre><h2 id="单页面应用"><a href="#单页面应用" class="headerlink" title="单页面应用"></a>单页面应用</h2><pre class="mermaid">graph LRA[Client]-->|AJAX Request| B[Server]B-->|Data Response| A</pre><h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><ol><li>有良好的交互体验<br>能提升页面切换体验，用户在访问应用页面是不会频繁的去切换浏览页面，从而避免了页面的重新加载</li><li>前后端分离开发<br>单页Web应用可以和RESTful规约一起使用，通过API提供接口数据，并使用Ajax异步获取，这样有助于分离客户端和服务器端工作</li><li>减轻服务器压力<br>服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍</li><li>共用一套后端程序代码<br>不用修改后端程序代码就可以同时用于 Web 界面、手机、平板等多种客户端</li></ol><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><ol><li>SEO难度较高<br>由于所有的内容都在一个页面中动态替换显示，所以在SEO上其有着天然的弱势，所以如果你的站点对SEO很看重，且要用单页应用，那么就做些静态页面给搜索引擎用吧</li><li>初次加载耗时多<br>为实现单页Web应用功能及显示效果，需要在加载页面的时候将JavaScript、CSS统一加载，部分页面可以在需要的时候加载。所以必须对JavaScript及CSS代码进行合并压缩处理</li><li>前进、后退管理<br>由于单页Web应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理，当然此问题也有解决方案，如react-router</li></ol><blockquote><p><a href="https://blog.csdn.net/huangpb123/article/details/86183453" target="_blank" rel="noopener">浅谈前端SPA（单页面应用）</a></p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;h1 id=&quot;什么是SPA&quot;&gt;&lt;a href=&quot;#什么是SPA&quot; class=&quot;headerlink&quot; title=&quot;什么是SPA&quot;&gt;&lt;/a&gt;什么是SPA&lt;/h1&gt;&lt;p&gt;SPA = single page web application = 单页Web应用&lt;br&gt;SPA是一种特
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>让hexo博客支持流程图</title>
+    <link href="https://jieny.github.io/2019/05/31/hexo-blog-add-diagrams/"/>
+    <id>https://jieny.github.io/2019/05/31/hexo-blog-add-diagrams/</id>
+    <published>2019-05-31T12:10:13.000Z</published>
+    <updated>2019-06-04T15:36:21.868Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用方法见github，下面是部分翻译"><a href="#使用方法见github，下面是部分翻译" class="headerlink" title="使用方法见github，下面是部分翻译"></a>使用方法见github，下面是部分翻译</h1><p><a href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams" target="_blank" rel="noopener">https://github.com/webappdevelp/hexo-filter-mermaid-diagrams</a>  </p><p>mermaid，有道云笔记用的就是这个语法</p><p>假设我的博客的根目录为【blog】<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ yarn add hexo-filter-mermaid-diagrams 或者 npm install -s hexo-filter-mermaid-diagrams</span><br></pre></td></tr></table></figure></p><p>打开blog/_config.yml文件，在底部插入以下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mermaid chart</span></span><br><span class="line">mermaid: <span class="comment">## mermaid url https://github.com/knsv/mermaid</span></span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span>  <span class="comment"># default true</span></span><br><span class="line">  version: <span class="string">"7.1.2"</span> <span class="comment"># default v7.1.2</span></span><br><span class="line">  options:  <span class="comment"># find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js</span></span><br><span class="line">    <span class="comment">#startOnload: true  // default true</span></span><br></pre></td></tr></table></figure></p><p>如果你要使用’Class diagram’,还要设置external_link: false，默认是true</p><p>打开blog/themes/【主题文件夹】/layout/_partial/after-footer.ejs文件，在底部插入以下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.mermaid.enable) &#123; %&gt;</span><br><span class="line">  &lt;script src=<span class="string">'https://unpkg.com/mermaid@&lt;%= theme.mermaid.version %&gt;/dist/mermaid.min.js'</span>&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    <span class="keyword">if</span> (window.mermaid) &#123;</span><br><span class="line">      mermaid.initialize(&#123;theme: <span class="string">'forest'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p><h1 id="使用示例，要加mermaid"><a href="#使用示例，要加mermaid" class="headerlink" title="使用示例，要加mermaid"></a>使用示例，要加mermaid</h1><p>三个反引号 mermaid<br>graph LR<br>A[Client]–&gt;|URL Request| B[Server]<br>B–&gt;|HTML Response| A<br>三个反引号</p><p>如下图：</p><pre class="mermaid">graph LRA[Client]-->|URL Request| B[Server]B-->|HTML Response| A</pre><h1 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h1><p><a href="https://github.com/bubkoo/hexo-filter-flowchart" target="_blank" rel="noopener">https://github.com/bubkoo/hexo-filter-flowchart</a></p><p>npm install –save hexo-filter-flowchart</p><p>三个反引号 flow<br>st=&gt;start: Start|past:&gt;<a href="http://www.google.com[blank]" target="_blank" rel="noopener">http://www.google.com[blank]</a><br>e=&gt;end: End:&gt;<a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a><br>op1=&gt;operation: My Operation|past<br>op2=&gt;operation: Stuff|current<br>sub1=&gt;subroutine: My Subroutine|invalid<br>cond=&gt;condition: Yes<br>or No?|approved:&gt;<a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a><br>c2=&gt;condition: Good idea|rejected<br>io=&gt;inputoutput: catch something…|request  </p><p>st-&gt;op1(right)-&gt;cond<br>cond(yes, right)-&gt;c2<br>cond(no)-&gt;sub1(left)-&gt;op1<br>c2(yes)-&gt;io-&gt;e<br>c2(no)-&gt;op2-&gt;e<br>三个反引号</p><p>如下图：</p><p><div id="flowchart-0" class="flow-chart"></div></p><p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start|past:>http://www.google.com[blank]e=>end: End:>http://www.google.comop1=>operation: My Operation|pastop2=>operation: Stuff|currentsub1=>subroutine: My Subroutine|invalidcond=>condition: Yesor No?|approved:>http://www.google.comc2=>condition: Good idea|rejectedio=>inputoutput: catch something...|requestst->op1(right)->condcond(yes, right)->c2cond(no)->sub1(left)->op1c2(yes)->io->ec2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;使用方法见github，下面是部分翻译&quot;&gt;&lt;a href=&quot;#使用方法见github，下面是部分翻译&quot; class=&quot;headerlink&quot; title=&quot;使用方法见github，下面是部分翻译&quot;&gt;&lt;/a&gt;使用方法见github，下面是部分翻译&lt;/h1&gt;&lt;p&gt;&lt;a
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>About Me</title>
+    <link href="https://jieny.github.io/2018/11/11/about-me/"/>
+    <id>https://jieny.github.io/2018/11/11/about-me/</id>
+    <published>2018-11-11T03:11:11.000Z</published>
+    <updated>2019-06-04T15:46:17.145Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Welcome-to-here"><a href="#Welcome-to-here" class="headerlink" title="Welcome to here"></a>Welcome to here</h1><p>雷迪森 and 简特门，大家好！我是jieny，杰尼龟 【O(∩_∩)O哈哈~】</p><p>Now let’s discuss the following questions.</p><h2 id="Where-is-here"><a href="#Where-is-here" class="headerlink" title="Where is here ?"></a>Where is here ?</h2><p>答：还用说，这当然是我的博客啦！在这里，我将分享一些东西（具体是什么呢？想到啥就写啥咯）。具体内容请关注发布的文章，主要还是一些与计算机相关的和日常生活杂谈，还有些学习笔记吧。</p><h2 id="Who-am-I"><a href="#Who-am-I" class="headerlink" title="Who am I ?"></a>Who am I ?</h2><p>答：我是一个平凡到不能再平凡的Coder。爱生活，爱CS。如果你对我所发的文章有什么疑问或者有什么建议，可以给我留言，我有看到会第一时间回复。当然，如果你“喜欢”我，可以find me探讨人生，如果我有时间的话！</p><h2 id="Disclaimer"><a href="#Disclaimer" class="headerlink" title="Disclaimer"></a>Disclaimer</h2><ol><li>本博客所有的原创内容都是个人观点，不保证绝对正确，欢迎大家批评并指正，同时我自己也会不断的改进和完善。</li><li>文章内容会不定时更新，请关注最新内容。</li><li>如果有内容侵犯到您的权益，请跟我联系，我会马上删除。</li></ol><h2 id="How-to-find-me"><a href="#How-to-find-me" class="headerlink" title="How to find me ?"></a>How to find me ?</h2><ol><li>Mail: <a href="mailto:xuyibin@139.com" target="_blank" rel="noopener">xuyibin@139.com</a></li><li>WeChat: kakalotto</li><li>QQ: 576420147</li><li>Github: <a href="https://github.com/jieny" target="_blank" rel="noopener">https://github.com/jieny</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Welcome-to-here&quot;&gt;&lt;a href=&quot;#Welcome-to-here&quot; class=&quot;headerlink&quot; title=&quot;Welcome to here&quot;&gt;&lt;/a&gt;Welcome to here&lt;/h1&gt;&lt;p&gt;雷迪森 and 简特门，大家好！我是
       
     
     </summary>
